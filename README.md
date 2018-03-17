@@ -13,8 +13,8 @@ First review [AIP-1](AIPS/eip-1.md). Then clone the repository and add your AIP 
 # Non-final AIPs
 | Number                    | Title                                                   | Author                        | Layer     | Status     |
 | ------------------------- | ------------------------------------------------------- | ----------------------------- | --------- | ---------- |
-| [3](AIPS/eip-3.md) |  Addition of CALLDEPTH opcode                           | Martin Holst Swende           | Core      | Draft      |
 <!--
+| [3](AIPS/eip-3.md) |  Addition of CALLDEPTH opcode                           | Martin Holst Swende           | Core      | Draft      |
 | [4](AIPS/eip-4.md)        |  AIP Classification                                     | Joseph Chow                   | Meta      | Draft      |
 | [5](AIPS/eip-5.md)        |  Gas Usage for `RETURN` and `CALL*`                     | Christian Reitwiessner        | Core      | Draft      |
 | [101](AIPS/eip-101.md)    |  Serenity Currency and Crypto Abstraction               | Vitalik Buterin               |           | Active     |
@@ -31,13 +31,16 @@ First review [AIP-1](AIPS/eip-1.md). Then clone the repository and add your AIP 
 # Deferred AIPs
 | Number                                             | Title                                                                                        | Author                                     | Layer      | Status   |
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------ | ---------- | -------- |
+<!--
 | [86](https://github.com/arrayio/AIPs/pull/208)     | Abstraction of transaction origin and signature                                              | Vitalik Buterin                            | Core       | Deferred (to be replaced) |
 | [96](https://github.com/arrayio/AIPs/pull/210)     | Blockhash refactoring                                                                        | Vitalik Buterin                            | Core       | Deferred |
 | [145](AIPS/eip-145.md)                             | Bitwise shifting instructions in EVM                                                         | Alex Beregszaszi, Paweł Bylica             | Core       | Deferred |
+-->
 
 # Finalized AIPs (standards that have been adopted)
 | Number                                             | Title                                                                                        | Author                                     | Layer      | Status   |
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------| ---------- | -------- |
+<!--
 | [2](AIPS/eip-2.md)                                 | Homestead Hard-fork Changes                                                                  | Vitalik Buterin                            | Core       | Final    |
 | [6](AIPS/eip-6.md)                                 | Renaming Suicide Opcode                                                                      | Hudson Jameson                             | Interface  | Final    |
 | [7](AIPS/eip-7.md)                                 | DELEGATECALL                                                                                 | Vitalik Buterin                            | Core       | Final    |
@@ -64,18 +67,23 @@ First review [AIP-1](AIPS/eip-1.md). Then clone the repository and add your AIP 
 | [649](https://github.com/arrayio/AIPs/pull/669)   | Metropolis Difficulty Bomb Delay and Block Reward Reduction                                  | Afri Schoedon, Vitalik Buterin             | Core       | Final    |
 | [658](https://github.com/arrayio/AIPs/pull/658)   | Embedding transaction status code in receipts                                                | Nick Johnson                               | Core       | Final    |
 | [706](AIPS/eip-706.md)                             | DEVp2p snappy compression                                                                    | Péter Szilágyi                             | Networking | Final    |
-
+-->
 # Active AIPs (standards that have been adopted but never meant to be completed)
 
 | Number                                             | Title                                                                                        | Author                                     | Layer      | Status   |
 | -------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------| ---------- | -------- |
+<!--
 | [1](AIPS/eip-1.md)                                 | AIP Purpose and Guidelines                                                                   | Martin Becze, Hudson Jameson               | Meta       | Active    |
+-->
 
 # Past Hard Forks
 | Codename                              | Aliases                     | Block number   | Date (UTC) |
 |-------------------------------------- |---------------------------- |----------------|------------|
+<!--
 | [Homestead](AIPS/eip-606.md)          |                             | 1,150,000      | 2016-03-14 |
 | [DAO Fork](AIPS/eip-779.md)           |                             | 1,920,000      | 2016-07-20 |
 | [Tangerine Whistle](AIPS/eip-608.md)  | Anti-DoS, AIP 150           | 2,463,000      | 2016-10-18 |
 | [Spurious Dragon](AIPS/eip-607.md)    | State-clearing, AIP 158/161 | 2,675,000      | 2016-11-22 |
 | [Byzantium](AIPS/eip-609.md)          | Metropolis: Part 1          | 4,730,000      | 2017-10-16 |
+-->
+
