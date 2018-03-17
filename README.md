@@ -2,7 +2,7 @@
 Array.io Improvement Proposals (AIPs) describe standards for the Array.io platform, including core protocol specifications, client APIs, and contract standards.
 
 # Contributing
-First review [AIP-1](AIPS/eip-1.md). Then clone the repository and add your AIP to it. There is a [template AIP here](eip-X.md). Then submit a Pull Request to Array.io's [AIPs repository](https://github.com/arrayio/AIPs).
+First review [AIP-1](AIPS/AIP-1.md). Then clone the repository and add your AIP to it. There is a [template AIP here](AIP-X.md). Then submit a Pull Request to Array.io's [AIPs repository](https://github.com/arrayio/AIPs).
 
 # AIP status terms
 * **Draft** - an AIP that is open for consideration
