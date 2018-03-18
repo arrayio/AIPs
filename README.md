@@ -14,6 +14,9 @@ First review [AIP-1](AIPS/AIP-1.md). Then clone the repository and add your AIP 
 | Number                    | Title                                                   | Author                        | Layer     | Status     |
 | ------------------------- | ------------------------------------------------------- | ----------------------------- | --------- | ---------- |
 <!--
+
+This readme was forked from Ethereum repository, so I am leaving the list below as in example of how the tables must be filled.
+
 | [3](AIPS/eip-3.md) |  Addition of CALLDEPTH opcode                           | Martin Holst Swende           | Core      | Draft      |
 | [4](AIPS/eip-4.md)        |  AIP Classification                                     | Joseph Chow                   | Meta      | Draft      |
 | [5](AIPS/eip-5.md)        |  Gas Usage for `RETURN` and `CALL*`                     | Christian Reitwiessner        | Core      | Draft      |
