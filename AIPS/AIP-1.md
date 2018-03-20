@@ -62,12 +62,12 @@ The possible paths of the status of AIPs are as follows:
 
 <img src=./AIP-1/process.png>
 
-Some Informational and Process AIPs may also have a status of “Active” if they are never meant to be completed. E.g. AIP 1 (this EIP).
+Some Informational and Process AIPs may also have a status of “Active” if they are never meant to be completed. E.g. AIP 1 (this AIP).
 
 What belongs in a successful AIP?
 ---------------------------------
 
-Each EIP should have the following parts:
+Each AIP should have the following parts:
 
 -   Preamble - RFC 822 style headers containing metadata about the AIP, including the AIP number, a short descriptive title (limited to a maximum of 44 characters), the names, and optionally the contact info for each author, etc.
 
@@ -174,7 +174,7 @@ If you are interested in assuming ownership of an AIP, send a message asking to 
 AIP Editors
 -----------
 
-The current EIP editors are
+The current AIP editors are
 
 ` * Vlad Smirnov (@vladiuz1)`
 
