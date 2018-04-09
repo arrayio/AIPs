@@ -178,7 +178,7 @@ The current AIP editors are
 
 ` * Vlad Smirnov (@vladiuz1)`
 
-` * Alexander Shevtsov (@randomlogin)`
+` * Roman Kuznetsov (@Xo66uT)`
 
 AIP Editor Responsibilities and Workflow
 --------------------------------------
