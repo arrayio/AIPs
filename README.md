@@ -11,8 +11,10 @@ First review [AIP-1](AIPS/AIP-1.md). Then clone the repository and add your AIP 
 * **Deferred** - an AIP that is not being considered for immediate adoption. May be reconsidered in the future for a subsequent hard fork.
 
 # Non-final AIPs
-| Number                    | Title                                                   | Author                        | Layer     | Status     |
-| ------------------------- | ------------------------------------------------------- | ----------------------------- | --------- | ---------- |
+| Number              | Title                                                   | Author                        | Layer     | Status     |
+| ------------------- | ------------------------------------------------------- | ----------------------------- | --------- | ---------- |
+| [2](AIPS/AIP-2.md) |  Format of manifest.json DApp file                       | Roman Kuznetsov          | Networking      | Active  |
+
 <!--
 
 This readme was forked from Ethereum repository, so I am leaving the list below as in example of how the tables must be filled.
