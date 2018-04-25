@@ -35,19 +35,21 @@ Manifest **required** parameters:
 |         `name` | _varchar(30)_  | uniq name for DApp | "Tic Tac Toe" | https://github.com/arrayio/array-io-client/issues/8 |
 |         `key`  | _type_         | uniq key for DApp  | ""            | issue link |
 |  `author_key`  | _type_         | public key for identity author of DApp  | ""            | issue link |
-|  `version`     | _varchar(5)_   | current version of DApp archive | "1.0.0"            | issue link |
+|  `version`     | _varchar(5)_   | current version of DApp archive | "1.0.0"            | https://github.com/arrayio/array-io-client/issues/14 |
 | `description`  | _varchar(255)_ | text description what DApp do.  | "This is a good game for all" | issue link |
 | `permissions`  | _array_        | parameters for get access to system Controllers  | "['web', 'log']" | issue link |
 |       `index`  | _varchar(255)_ | path of DApp main view file  | "index.html"      | issue link |
 |       `main`   | _varchar(255)_ | path of DApp main js file    | "main.js"         | issue link |
 |       `icon`   | _varchar(255)_ | path of DApp main icon file. Size 42px on 42px.  | "favicon.png"      | issue link |
 |       `thumb`  | _varchar(255)_ | path of DApp main thumb file. Size 300px on 120px.  | "thumb.png"      | issue link |
+|       `default_language`  | _varchar(5)_ | The default language that defines the country of the marketplace  | "ru-RU"      | https://github.com/arrayio/array-io-client/issues/8 |
 
 Manifest **optional** parameters:
 
 | parameter_name | type and size  | description        | example       | issue link |
 | -------------- | -------------- | ------------------ | ------------- | ---------- |
 |         `tags` | _array_        | parameters for help search DApp at marketplace. | "['work', 'tools']" | issue link |
+|         `dependencies` | _array_        | NodeJS packages names needed for this app work . | "['cookie-parser', 'body-parser']" | issue link |
 
 ## Rationale
 Manifest file also used in google play and app store marketplaces. We must pay attention to theirs [AndroidManifest.xml](https://developer.android.com/guide/topics/manifest/manifest-intro.html) and [info.plist](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html) files.
