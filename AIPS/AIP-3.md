@@ -1,4 +1,4 @@
-﻿    AIP: 1
+﻿    AIP: 3
       Title: Dapp Registry
       Status: Draft
       Type: Meta
@@ -108,6 +108,9 @@ interface AIP3 is ERC721 {
     function ownerOfHash(bytes32 hash) external view returns (account);
     function idByName(string name) external view returns (uint256 tokenId);
     function idByHash(bytes32 hash) external view returns (uint256 tokenId);
+    
+    /// @notice reserves a name using namehash
+    /// @param namhash - is a hash of name+account+salt
     function preRegister(bytes32 namehash) external;
     
     /// @notice register a new unique name of dapp.
