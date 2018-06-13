@@ -86,15 +86,15 @@ Whoever invests enough amount of RAY cryptocurrency into dapp preregistration re
 
 ### Author verification
 
-This is the easiest part. Since we use erc721, we just slightly modify a standard standard erc721 method:
+This is the easiest part. 
 
-from:
-```javascript
-function ownerOf(uint256 _tokenId) external view returns (account)
-```
-to:
+Since we use erc721, we implement 2 more methods on top of standard erc721 method (`ownerOf`):
+
 ```javascript
 function ownerOf(string name) external view returns (account)
 ```
-
-As easy as this.
+and
+```javascript
+function ownerOf(string hash) external view returns (account)
+```
+So you can lookup ownership by `hash` and by `name`, on top of `tokenId`
