@@ -42,4 +42,10 @@ A smart contract is the easiest way to manage such registry for a few reasons.
 Definitions
 -----------
 
-Author - Author is the entity/person who has created the dapp, and registered its name within Dapp Registry smart contract. Author is identified by the account that has current author rights.
+*Author* - an entity/person that created the dapp, and registered its name within Dapp Registry smart contract. Author is identified by the account that has current author rights.
+
+*Hash* - deterministic hash based on dapp bundle content. Based on IPFS. Also used to identify a version of the dapp. It is also part of IPFS address if the dapp is published on the network.
+
+*Name* - user friendly name of the dapp.
+
+*Version* - a userfriendly version of the dapp described here: https://github.com/arrayio/array-io-client/issues/14. Every version has its own address in the IPFS (hash).
