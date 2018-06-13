@@ -91,10 +91,21 @@ This is the easiest part.
 Since we use erc721, we implement 2 more methods on top of standard erc721 method (`ownerOf`):
 
 ```javascript
-function ownerOf(string name) external view returns (account)
+function ownerOfName(string name) external view returns (account)
 ```
 and
 ```javascript
-function ownerOf(string hash) external view returns (account)
+function ownerOfHash(string hash) external view returns (account)
 ```
 So you can lookup ownership by `hash` and by `name`, on top of `tokenId`
+
+## List of methods
+
+```javascript
+interface AIP3 /* is ERC721 */ {
+    function ownerOfName(string name) external view returns (account);
+    function ownerOfHash(bytes32 hash) external view returns (account);
+    function idByName(string name) external view returns (uint256 tokenId);
+    function idByHash(bytes32 hash) external view returns (uint256 tokenId);
+    function preRegister(bytes32 namehash) external;
+```
