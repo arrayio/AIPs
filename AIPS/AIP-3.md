@@ -130,7 +130,7 @@ interface AIP3 is ERC721 {
     /// @param tokenId - the token id
     /// @param version - the new version of the app compliant with https://github.com/arrayio/array-io-client/issues/14
     /// @param ipfsHash - the hash of the dapp bundle
-    function update(uint256 tokenId, string version, bytes ipfsHash) external;
+    function update(uint256 tokenId, string version, bytes ipfsHash) external onlyOwner;
     
     /// @notice there should be no name change allowed. Just register a new one and 
     /// publish a new version.
