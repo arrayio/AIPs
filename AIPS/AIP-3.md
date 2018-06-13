@@ -102,13 +102,35 @@ So you can lookup ownership by `hash` and by `name`, on top of `tokenId`
 ## List of methods
 
 ```javascript
-interface AIP3 /* is ERC721 */ {
+/// the dapp registry interface extends ERC721 interface
+interface AIP3 is ERC721 {
     function ownerOfName(string name) external view returns (account);
     function ownerOfHash(bytes32 hash) external view returns (account);
     function idByName(string name) external view returns (uint256 tokenId);
     function idByHash(bytes32 hash) external view returns (uint256 tokenId);
     function preRegister(bytes32 namehash) external;
-    function register(string name, string defaultLanguage, bytes salt, string version, bytes ipfsHash) external;
+    
+    /// @notice register a new unique name of dapp.
+    /// @dev this function registers a new name (if it has not been registered before)
+    /// and assigns a version and bundle hash to it.
+    /// if this name is taken, it checks if recent preRegistration with namehash has
+    /// was the first one to attempt preRegistration. If it was, it transfers the ownership
+    /// to this author.
+    /// @param name - the utf-8 name of the dapp.
+    /// @param locale - the language code of the name, e.g. ru_RU.
+    /// @param version - the first version of the app (e.g. 0.1.0) compliant with https://github.com/arrayio/array-io-client/issues/14
+    /// @param ipfsHash - the hash of the dapp bundle
+    /// @param salt - the salt used to create preRegister namehash
+    function register(string name, string language, string version, bytes ipfsHash, bytes salt) external;
+    
+    /// @notice publish a new version of already registered dapp.
+    /// @param tokenId - the token id
+    /// @param version - the new version of the app compliant with https://github.com/arrayio/array-io-client/issues/14
+    /// @param ipfsHash - the hash of the dapp bundle
     function update(uint256 tokenId, string version, bytes ipfsHash) external;
+    
+    /// @notice there should be no name change allowed. Just register a new one and 
+    /// publish a new version.
+    /// function changeName();
     }
 ```
