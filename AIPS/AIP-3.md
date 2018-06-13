@@ -104,8 +104,8 @@ So you can lookup ownership by `hash` and by `name`, on top of `tokenId`
 ```javascript
 /// the dapp registry interface extends ERC721 interface
 interface AIP3 is ERC721 {
-    function ownerOfName(string name) external view returns (account);
-    function ownerOfHash(bytes32 hash) external view returns (account);
+    function ownerOfName(string name) external view returns (account owner);
+    function ownerOfHash(bytes32 hash) external view returns (account owner);
     function idByName(string name) external view returns (uint256 tokenId);
     function idByHash(bytes32 hash) external view returns (uint256 tokenId);
     
