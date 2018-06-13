@@ -31,3 +31,15 @@ This smart contract will be responsible for registering new dapp names, with ref
 
 The regitry smart contract will make sure that the name is unique. And will also contain the default language of the name. It will also assign an author during registration of the name of a dapp. The author will be identified by account (or address) that has submited name registration request. The author can theoretically be a smart contract.. A multisig for example.
 
+Versioning is another feature of the smart contract. Every new version will be submited to the smart contract, identifying the author (account or address) making sure he has authority over the app, and the registry will assign a new address of the dapp.
+
+Execution of registered and unregistered apps may be allowed/forbidden on the client settings level. If user of client application allows execution of unregistered apps, he will get a warning trying to execute such application, yet it will let her/him execute it. Similar to how osx manages its securities policies regarding what code is allowed to be executed.
+
+Registry must also have transfer ownership functionality.
+
+A smart contract is the easiest way to manage such registry for a few reasons.
+
+Definitions
+-----------
+
+Author - Author is the entity/person who has created the dapp, and registered its name within Dapp Registry smart contract. Author is identified by the account that has current author rights.
