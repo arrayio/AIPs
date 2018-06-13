@@ -94,7 +94,7 @@ function ownerOf(uint256 _tokenId) external view returns (account)
 ```
 to:
 ```javascript
-function ownerOf(uint256 name) external view returns (account)
+function ownerOf(string name) external view returns (account)
 ```
 
 As easy as this.
