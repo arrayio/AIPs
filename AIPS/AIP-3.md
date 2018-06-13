@@ -108,4 +108,7 @@ interface AIP3 /* is ERC721 */ {
     function idByName(string name) external view returns (uint256 tokenId);
     function idByHash(bytes32 hash) external view returns (uint256 tokenId);
     function preRegister(bytes32 namehash) external;
+    function register(string name, string defaultLanguage, bytes salt, string version, bytes ipfsHash) external;
+    function update(uint256 tokenId, string version, bytes ipfsHash) external;
+    }
 ```
