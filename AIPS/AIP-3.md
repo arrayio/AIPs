@@ -2,7 +2,7 @@
       Title: Dapp Registry
       Status: Draft
       Type: Meta
-      Author: @Vladiuz1 (vlad@array.io)
+      Author: @Vladiuz1 (vs@array.io)
       Created: 2018-06-13
 
 What is Dapp Registry?
@@ -74,4 +74,12 @@ If you are connected to a private node, you can just query your node smart contr
 3. Execute a smart contract method `preRegister(namehash).execute()` with your author account. Where namehash is a ripemd160 hash of a `concat(name, account, salt)` that you, as author have generated locally. This is a safe proof that you were the first who registered the name. Here name - the name you are trying to register, account - your author account, and salt - is a random secret that only you know.
 
 4. After this function has been irreversably accepted by the blockchain, it is safe to send the name registration with name unencrypted. So after a few blocks generated you will send another method call:
-`register(name, defaultLanguage, salt, version, ipfsHash)` 
+`register(name, defaultLanguage, salt, version, ipfsHash)`. This checks name against a duplicate registration if there is no previously registered dapp with that name, it is automatically minted (erc721 token, remember?) and ownership passed to the you.
+
+If there is a recent registration of that name, then the registry smart contract calculates both your namehash and previously registered author's namehash, locates both preRegistrations, and if your preRegistration was submitted before the other author's preRegistration, it automatically passes the ownership of that name erc721 token to you BUT provided that your preRegistration hasn't expired. 
+
+We must invalidate preRegistrations after a short period of time (say few hours) to avoid mass hidden preRegistration. So that the open database of already registered names reflected the most relevant list of unque names.
+
+Using erc721 standart for dapp names, is pretty much equals to ownership of dapps, erc721 includes all the functionality that allows quick passing of ownership (authorship) of dapp names.
+
+Whoever invests enough amount of RAY cryptocurrency into dapp preregistration receives a bonus of ability to sell these names in a free market.
