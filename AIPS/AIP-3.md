@@ -83,3 +83,18 @@ We must invalidate preRegistrations after a short period of time (say few hours)
 Using erc721 standart for dapp names, is pretty much equals to ownership of dapps, erc721 includes all the functionality that allows quick passing of ownership (authorship) of dapp names.
 
 Whoever invests enough amount of RAY cryptocurrency into dapp preregistration receives a bonus of ability to sell these names in a free market.
+
+### Author verification
+
+This is the easiest part. Since we use erc721, we just slightly modify a standard standard erc721 method:
+
+from:
+```javascript
+function ownerOf(uint256 _tokenId) external view returns (account)
+```
+to:
+```javascript
+function ownerOf(uint256 name) external view returns (account)
+```
+
+As easy as this.
