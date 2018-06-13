@@ -54,7 +54,7 @@ Definitions
 Functionality
 -------------
 
-### Registering a name.
+### Registering a dapp name.
 
 Our dapp names will be part of URI addresses used to reference a dapp or an anchor within a dapp. Hence the dapp names must be unique. In order to provide such uniqness, we must devise a system how to assign a unque name to a dapp. Just like with domains, we anticipate that there may be demand for good application names, and many users may wish to compete for a good dapp name. Proposed smart contract functionality allows for charging a fee for registering a name. This solves a problem of mass registering the names.
 
@@ -66,4 +66,12 @@ Since registering a name may be done in a decentralized way, we need to make sur
 
 This is achieved by pre-registration. This is how i propose it shall work:
 
-1. think of unique name that has never been used before.
+1. Download a list of all names from the registry.
+2. Check your name for unqueness locally (do not send to a public node).
+
+If you are connected to a private node, you can just query your node smart contract method (`search(name).call()`) to find if a name has been registered before.
+
+3. Execute a smart contract method `preRegister(namehash).execute()` with your author account. Where namehash is a ripemd160 hash of a `concat(name, account, salt)` that you, as author have generated locally. This is a safe proof that you were the first who registered the name. Here name - the name you are trying to register, account - your author account, and salt - is a random secret that only you know.
+
+4. After this function has been irreversably accepted by the blockchain, it is safe to send the name registration with name unencrypted. So after a few blocks generated you will send another method call:
+`register(name, defaultLanguage, salt, version, ipfsHash)` 
