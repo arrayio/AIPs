@@ -104,9 +104,21 @@ So you can lookup ownership by `hash` and by `name`, on top of `tokenId`
 ```javascript
 /// the dapp registry interface extends ERC721 interface
 interface AIP3 is ERC721 {
+    
+    /// @notice owner of the dapp identified by name
+    /// @param name - the unique name of the dapp
     function ownerOfName(string name) external view returns (account owner);
+    
+    /// @notice owner of the dapp identified by hash
+    /// @param hash - the deterministic IPFS hash of the dapp
     function ownerOfHash(bytes32 hash) external view returns (account owner);
+    
+    /// @notice get tokenId by dapp name
+    /// @param name - the unique name of the dapp
     function idByName(string name) external view returns (uint256 tokenId);
+    
+    /// @notice get tokenId by IPFS hash
+    /// @param hash - the deterministic IPFS hash of the dapp
     function idByHash(bytes32 hash) external view returns (uint256 tokenId);
     
     /// @notice reserves a name using namehash
@@ -124,13 +136,13 @@ interface AIP3 is ERC721 {
     /// @param version - the first version of the app (e.g. 0.1.0) compliant with https://github.com/arrayio/array-io-client/issues/14
     /// @param ipfsHash - the hash of the dapp bundle
     /// @param salt - the salt used to create preRegister namehash
-    function register(string name, string language, string version, bytes ipfsHash, bytes salt) external;
+    function register(string name, string language, string version, bytes ipfsHash, bytes salt) external payable;
     
     /// @notice publish a new version of already registered dapp.
     /// @param tokenId - the token id
     /// @param version - the new version of the app compliant with https://github.com/arrayio/array-io-client/issues/14
     /// @param ipfsHash - the hash of the dapp bundle
-    function update(uint256 tokenId, string version, bytes ipfsHash) external onlyOwner;
+    function update(uint256 tokenId, string version, bytes ipfsHash) external onlyOwner payable;
     
     /// @notice there should be no name change allowed. Just register a new one and 
     /// publish a new version.
