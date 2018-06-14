@@ -2,7 +2,7 @@
       Title: AIP Purpose and Guidelines
       Status: Draft
       Type: Meta
-      Author: Martin Becze <mb@ethereum.org>, Hudson Jameson <hudson@ethereum.org>, @Vladiuz1 (vlad@array.io)
+      Author: Martin Becze <mb@ethereum.org>, Hudson Jameson <hudson@ethereum.org>, @Vladiuz1 (vs@array.io)
       Created: 2015-10-27, 2017-02-01, 2018-03-17
 
 What is an AIP?
