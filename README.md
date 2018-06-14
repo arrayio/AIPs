@@ -14,6 +14,7 @@ First review [AIP-1](AIPS/AIP-1.md). Then clone the repository and add your AIP 
 | Number              | Title                                                   | Author                        | Layer     | Status     |
 | ------------------- | ------------------------------------------------------- | ----------------------------- | --------- | ---------- |
 | [2](AIPS/AIP-2.md) |  Format of manifest.json DApp file                       | Roman Kuznetsov          | Networking      | Active  |
+| [3](AIPS/AIP-3.md) |  Dapp name registry                       | @Vladiuz1          | Networking      | Active  |
 
 <!--
 
