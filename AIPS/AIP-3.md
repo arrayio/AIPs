@@ -101,7 +101,7 @@ So you can lookup ownership by `hash` and by `name`, on top of `tokenId`
 
 ## List of methods
 
-```javascript
+```solidity
 /// the dapp registry interface extends ERC721 interface
 interface AIP3 is ERC721 {
     
