@@ -1,5 +1,5 @@
 ---
-AIP: 3
+aip: 3
 title: Dapp Registry Smart Contract
 author: @vladiuz1 <vs@array.io>
 type: Standards Track
