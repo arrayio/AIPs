@@ -58,31 +58,31 @@ Functionality
 
 Our dapp names will be part of URI addresses used to reference a dapp or an anchor within a dapp. Hence the dapp names must be unique. In order to provide such uniqness, we must devise a system how to assign a unque name to a dapp. Just like with domains, we anticipate that there may be demand for good application names, and many users may wish to compete for a good dapp name. Proposed smart contract functionality allows for charging a fee for registering a name. This solves a problem of mass registering the names.
 
-Even a small fee will ensure that there is a way to limit the amount of pre-registered names.
+Even a small fee will ensure that there is a way to limit the amount of reserved names.
 
 Every dapp name must be a ERC721 token, ownership of which can be passed over to other authors. Early registrators of the names, will obviously have edge, but they also risk to loose their investment, and there will be registration fee.
 
 Since registering a name may be done in a decentralized way, we need to make sure that nodes that propagate registration request do no hijack registration and register a good name just before an author trying to register a name or merely looks up a name for uniqueness in a smart contract.
 
-This is achieved by pre-registration. This is how i propose it shall work:
+This is achieved by name reservation. This is how i propose it shall work:
 
 1. Download a list of all names from the registry.
 2. Check your name for unqueness locally (do not send to a public node).
 
 If you are connected to a private node, you can just query your node smart contract method (`search(name).call()`) to find if a name has been registered before.
 
-3. Execute a smart contract method `preRegister(namehash).execute()` with your author account. Where namehash is a ripemd160 hash of a `concat(name, account, salt)` that you, as author have generated locally. This is a safe proof that you were the first who registered the name. Here name - the name you are trying to register, account - your author account, and salt - is a random secret that only you know.
+3. Execute a smart contract method `reserve(namehash).execute()` with your author account. Where namehash is a ripemd160 hash of a `concat(name, account, salt)` that you, as author have generated locally. This is a safe proof that you were the first who registered the name. Here name - the name you are trying to register, account - your author account, and salt - is a random secret that only you know.
 
 4. After this function has been irreversably accepted by the blockchain, it is safe to send the name registration with name unencrypted. So after a few blocks generated you will send another method call:
 `register(name, defaultLanguage, salt, version, ipfsHash)`. This checks name against a duplicate registration if there is no previously registered dapp with that name, it is automatically minted (erc721 token, remember?) and ownership passed to the you.
 
-If there is a recent registration of that name, then the registry smart contract calculates both your namehash and previously registered author's namehash, locates both preRegistrations, and if your preRegistration was submitted before the other author's preRegistration, it automatically passes the ownership of that name erc721 token to you BUT provided that your preRegistration hasn't expired. 
+If there is a recent registration of that name, then the registry smart contract calculates both your namehash and previously registered author's namehash, locates both `reserve()` records, and if your reservation was submitted before the other author's name reservation, it automatically passes the ownership of that name erc721 token to you BUT provided that your `reserve()` hasn't expired. 
 
-We must invalidate preRegistrations after a short period of time (say few hours) to avoid mass hidden preRegistration. So that the open database of already registered names reflected the most relevant list of unque names.
+We must invalidate `reserve()` after a short period of time (say few hours) to avoid mass hidden pre registrations. So that the open database of already registered names reflected the most relevant list of unque names.
 
 Using erc721 standart for dapp names, is pretty much equals to ownership of dapps, erc721 includes all the functionality that allows quick passing of ownership (authorship) of dapp names.
 
-Whoever invests enough amount of RAY cryptocurrency into dapp preregistration receives a bonus of ability to sell these names in a free market.
+Whoever invests enough amount of RAY into dapp name registration receives a bonus of ability to sell these names in a free market.
 
 ### Author verification
 
@@ -119,7 +119,7 @@ interface AIP3 is ERC721 {
     /// @param locale - the language code of the name, e.g. ru_RU.
     /// @param version - the first version of the app (e.g. 0.1.0) compliant with https://github.com/arrayio/array-io-client/issues/14
     /// @param ipfsHash - the hash of the dapp bundle
-    /// @param salt - the salt used to create preRegister namehash
+    /// @param salt - the salt used to create `reserve` namehash
     function register(string name, string language, string version, bytes ipfsHash, bytes salt) external payable;
     
     /// @notice publish a new version of already registered dapp.
@@ -134,6 +134,7 @@ interface AIP3 is ERC721 {
 
     /// @notice lookup if a name is available
     /// @param name - the name to check for availability
+    /// @warning MUST BE USED ONLY WITH TRUSTED NODES!!!
     function lookup(string name) external view returns (bool available);
 
 
