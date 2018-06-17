@@ -6,8 +6,8 @@ type: Standards Track
 category: ARC
 status: Draft
 created: 2018-06-13
+dependencies: -
 ---
-
 
 What is Dapp Registry?
 --------------
