@@ -1,9 +1,13 @@
-﻿    AIP: 3
-      Title: Dapp Registry
-      Status: Draft
-      Type: Meta
-      Author: @Vladiuz1 (vs@array.io)
-      Created: 2018-06-13
+---
+AIP: 3
+title: Dapp Registry Smart Contract
+author: @vladiuz1 <vs@array.io>
+type: Standards Track
+category: ARC
+status: Draft
+created: 2018-06-13
+---
+
 
 What is Dapp Registry?
 --------------
