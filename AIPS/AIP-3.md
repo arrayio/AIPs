@@ -105,31 +105,15 @@ So you can lookup ownership by `hash` and by `name`, on top of `tokenId`
 /// the dapp registry interface extends ERC721 interface
 interface AIP3 is ERC721 {
     
-    /// @notice owner of the dapp identified by name
-    /// @param name - the unique name of the dapp
-    function ownerOfName(string name) external view returns (account owner);
-    
-    /// @notice owner of the dapp identified by hash
-    /// @param hash - the deterministic IPFS hash of the dapp
-    function ownerOfHash(bytes32 hash) external view returns (account owner);
-    
-    /// @notice get tokenId by dapp name
-    /// @param name - the unique name of the dapp
-    function idByName(string name) external view returns (uint256 tokenId);
-    
-    /// @notice get tokenId by IPFS hash
-    /// @param hash - the deterministic IPFS hash of the dapp
-    function idByHash(bytes32 hash) external view returns (uint256 tokenId);
-    
     /// @notice reserves a name using namehash
     /// @param namhash - is a hash of name+account+salt
-    function preRegister(bytes32 namehash) external;
+    function reserve(bytes32 namehash) external;
     
     /// @notice register a new unique name of dapp.
     /// @dev this function registers a new name (if it has not been registered before)
     /// and assigns a version and bundle hash to it.
-    /// if this name is taken, it checks if recent preRegistration with namehash has
-    /// was the first one to attempt preRegistration. If it was, it transfers the ownership
+    /// if this name is taken, it checks if recent `reserve()` with namehash has
+    /// was the first one to attempt pre registration. If it was, it transfers the ownership
     /// to this author.
     /// @param name - the utf-8 name of the dapp.
     /// @param locale - the language code of the name, e.g. ru_RU.
@@ -147,5 +131,55 @@ interface AIP3 is ERC721 {
     /// @notice there should be no name change allowed. Just register a new one and 
     /// publish a new version.
     /// function changeName();
+
+    /// @notice lookup if a name is available
+    /// @param name - the name to check for availability
+    function lookup(string name) external view returns (bool available);
+
+
+    /// @notice owner of the dapp identified by name
+    /// @param name - the unique name of the dapp
+    function ownerOfName(string name) external view returns (account owner);
+    
+    /// @notice owner of the dapp identified by hash
+    /// @param hash - the deterministic IPFS hash of the dapp
+    function ownerOfHash(bytes32 hash) external view returns (account owner);
+    
+    /// @notice get tokenId by dapp name
+    /// @param name - the unique name of the dapp
+    function idByName(string name) external view returns (uint256 tokenId);
+    
+    /// @notice get tokenId by IPFS hash
+    /// @param hash - the deterministic IPFS hash of the dapp
+    function idByHash(bytes32 hash) external view returns (uint256 tokenId);
+
+      /// @notice get dapp name given an IPFS hash
+      /// @param hash - the ipfs hash (address)
+      function nameByHash(bytes32 hash) external view returns (string name);
+
+      /// @notice get IPFS hash given dapp name
+      /// @dev returns the hash of the last verions of the dapp given the name
+      /// @param name - unique name of the dapp
+      function hashByName(string name) external view returns (bytes32 hash);
+
+      /// @notice get IPFS hash given both a dapp name and a version
+      /// @dev returns the hash of the dapp given both the version and the name
+      /// @param name - unique name of the dapp
+      /// @param version - the version of the dapp
+      function hashByNameVersion(string name, string version) external view returns (bytes32 hash);
+
+      /// @notice get latest version of dapp given its name
+      /// @param name - unique name of the dapp
+      function versionHashByName(string name) external view returns (string version, bytes32 hash);
+
+      /// @notice get latest version of dapp given dapp's IPFS hash
+      /// @param hash - the ipfs hash (address)
+      function versionHashByHash(bytes32 hash) external view returns (string version);
+
+      /// @notice get the language of the name registered
+      /// @param name - unique name of the dapp
+      function languageByName(string name) external view returns (bytes5 language);    
+    
+    
     }
 ```
