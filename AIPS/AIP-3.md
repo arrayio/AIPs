@@ -1,6 +1,6 @@
 ---
 aip: 3
-title: Dapp Registry Smart Contract
+title: ARC3 - Dapp Registry Smart Contract
 author: @vladiuz1 <vs@array.io>
 type: Standards Track
 category: ARC
@@ -17,7 +17,7 @@ Dapp registry is a registrar of dapp bundles published or unpublished.
 Rationale
 ---------
 
-A Dapp needs 3 fundamental features:
+A Dapp needs a few fundamental features:
 
 1. Author verificiation
 2. A unique name
