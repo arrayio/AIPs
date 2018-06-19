@@ -32,7 +32,7 @@ Manifest **required** parameters:
 
 | parameter_name | type and size  | description        | example       | issue link |
 | -------------- | -------------- | ------------------ | ------------- | ---------- |
-|         `name` | _varchar(30)_  | uniq name for DApp | "Tic Tac Toe" | https://github.com/arrayio/array-io-client/issues/8 |
+|         `title` | _varchar(30)_  | uniq name for DApp | "Tic Tac Toe" | https://github.com/arrayio/array-io-client/issues/8 |
 |  `author`      | _varchar(80)_         | author name and email  | "Roman Kuznetsov <Xo66uT.kr@gmail.com>"  | issue link |
 |  `version`     | _varchar(5)_   | current version of DApp archive | "1.0.0"            | https://github.com/arrayio/array-io-client/issues/14 |
 | `description`  | _varchar(255)_ | text description what DApp do.  | "This is a good game for all" | issue link |
