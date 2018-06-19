@@ -179,7 +179,8 @@ interface AIP3 is ERC721 {
 
       /// @notice get latest version of dapp given dapp's IPFS hash
       /// @param hash - the ipfs hash (address)
-      function versionHashByHash(bytes32 hash) external view returns (string version);
+      /// @returns - version of the app given the IPFS hash of the dapp bundle
+      function versionByHash(bytes32 hash) external view returns (string version);
 
       /// @notice get the language of the name registered
       /// @param name - unique name of the dapp
