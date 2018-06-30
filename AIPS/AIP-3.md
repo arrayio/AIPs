@@ -92,7 +92,7 @@ Whoever invests enough amount of RAY into dapp name registration receives a bonu
 
 This is the easiest part. 
 
-Since we use erc721, we implement 2 more methods on top of standard erc721 method (`ownerOf`):
+Since we use erc721, we implement 2 more key methods on top of standard erc721 method (`ownerOf`):
 
 ```javascript
 function ownerOfName(string name) external view returns (account)
