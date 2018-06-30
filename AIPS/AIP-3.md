@@ -189,3 +189,14 @@ interface AIP3 is ERC721 {
     
     }
 ```
+
+Other uses
+----------
+
+DApp registry may also be used for other use cases where unique naming is required.
+
+For example, let's say you are making a distributed Web brwoser based on Array.io or any front end client for IPFS. You need a decentralized domain name registry. Userfriendly domain name shortcuts would be an obvious usability shortcut to memorize addresses in IPFS. The same smart contract may be used for this.
+
+One of ideas we have is a ipfs-based markdown editor (let's say array://wiki/) that will create a distributed and decentralized wikipedia residing in IPFS. Editing a wiki entry will be built into a viewer, everytime a user saves edited page (let's say array://wiki/Steven_Hawking), naturally its IPFS address changes. Once the user is ready to commit the change, he is executing an 'update' method of the name registry contract pointing the name 'Isaak_Newton' to new IPFS address.
+
+Similarly one could create a distributed github with unique naming/version registry.
