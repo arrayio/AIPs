@@ -60,7 +60,7 @@ Functionality
 
 ### Registering a dapp name.
 
-Our dapp names will be part of URI addresses used to reference a dapp or an anchor within a dapp. Hence the dapp names must be unique. In order to provide such uniqness, we must devise a system how to assign a unque name to a dapp. Just like with domains, we anticipate that there may be demand for good application names, and many users may wish to compete for a good dapp name. Proposed smart contract functionality allows for charging a fee for registering a name. This solves a problem of mass registering the names.
+Our dapp names will be part of URI addresses used to reference a dapp or an anchor within a dapp. Hence the dapp names must be unique. In order to provide such uniqness, we must devise a system how to assign a unique name to a dapp. Just like with domains, we anticipate that there may be demand for good application names, and many users may wish to compete for a good dapp name. Proposed smart contract functionality allows for charging a fee for registering a name. This solves a problem of mass registering the names.
 
 Even a small fee will ensure that there is a way to limit the amount of reserved names.
 
@@ -71,7 +71,7 @@ Since registering a name may be done in a decentralized way, we need to make sur
 This is achieved by name reservation. This is how i propose it shall work:
 
 1. Download a list of all names from the registry.
-2. Check your name for unqueness locally (do not send to a public node).
+2. Check your name for uniqueness locally (do not send to a public node).
 
 If you are connected to a private node, you can just query your node smart contract method (`search(name).call()`) to find if a name has been registered before.
 
@@ -82,7 +82,7 @@ If you are connected to a private node, you can just query your node smart contr
 
 If there is a recent registration of that name, then the registry smart contract calculates both your namehash and previously registered author's namehash, locates both `reserve()` records, and if your reservation was submitted before the other author's name reservation, it automatically passes the ownership of that name erc721 token to you BUT provided that your `reserve()` hasn't expired. 
 
-We must invalidate `reserve()` after a short period of time (say few hours) to avoid mass hidden pre registrations. So that the open database of already registered names reflected the most relevant list of unque names.
+We must invalidate `reserve()` after a short period of time (say few hours) to avoid mass hidden pre registrations. So that the open database of already registered names reflected the most relevant list of unique names.
 
 Using erc721 standart for dapp names, is pretty much equals to ownership of dapps, erc721 includes all the functionality that allows quick passing of ownership (authorship) of dapp names.
 
