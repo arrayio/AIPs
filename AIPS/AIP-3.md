@@ -110,7 +110,7 @@ So you can lookup ownership by `hash` and by `name`, on top of `tokenId`
 interface AIP3 is ERC721 {
     
     /// @notice reserves a name using namehash
-    /// @param namhash - is a hash of name+account+salt
+    /// @param namehash - is a hash of name+account+salt
     function reserve(bytes32 namehash) external;
     
     /// @notice register a new unique name of dapp.
